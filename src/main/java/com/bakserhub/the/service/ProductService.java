@@ -17,4 +17,8 @@ public class ProductService {
 	public List<Product> listProducts() {
 		return productRepo.listProducts();
 	}
+
+	public Product getProduct(String id) {
+		return productRepo.getProduct(id);
+	}
 }
