@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.bakserhub.the.domain.Product;
+import com.bakserhub.the.domain.ProductCategory;
 import com.bakserhub.the.service.ProductService;
 
 @RestController
@@ -34,4 +35,9 @@ public class ProductController {
 		return new ResponseEntity<>(response, HttpStatus.OK);
 	}
 
+	@GetMapping("/category")
+	public ResponseEntity<List<ProductCategory>> listCategory() {
+		var response = productService.listCategories();
+		return new ResponseEntity<>(response, HttpStatus.OK);
+	}
 }
